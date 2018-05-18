@@ -1,0 +1,24 @@
+.stars > .star {
+    display: inline-block;
+}
+
+.star {
+    color: #5a585a;
+    font-size: 1.6rem;
+}
+
+.stars > .active:before, 
+/* ajouter la class active permet de cibler l'element ?????? */
+.stars:hover > .star:before {
+    content: '★';
+    position: absolute; 
+    /* absolute permet de cacher l'étoile vide par l'étoile pleine, sans absolute elle s'insérerait devant l'étoile vide */
+    cursor: pointer;
+}
+
+.stars > .star:hover ~ .star:before {
+    /* ~ permet de selectionner tous les freres après */
+    /* essayer avec 
+    content: '@'; */
+    content: '';
+}
